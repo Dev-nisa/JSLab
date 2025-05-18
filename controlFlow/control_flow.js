@@ -5,7 +5,9 @@ let isLoggedIn = true;
 let userMessage;
 let userType = "subscriber";
 let userCategory;
-
+let isAuthenticated = true;
+let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
+console.log("Authentication Status: ", authenticationStatus);
 // Access Level conditional
 if (userRole === "admin") {
     accessLevel = "Full access granted";
