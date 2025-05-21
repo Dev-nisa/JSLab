@@ -1,4 +1,8 @@
-// variables
+const submitButton=document.getElementById('submitBtn');
+submitButton.onclick = submitFeedback;
+
+function submitFeedback(){
+    //variables 
     const username = document.getElementById('name').value;
     const age = document.getElementById('age').value;
     const email = document.getElementById('email').value;
@@ -6,12 +10,9 @@
     const designation = document.getElementById('designation').value;
     const productType = document.getElementById('productType').value;
     const feedback = document.getElementById('feedbackText').value;
-    const submitButton=document.getElementById('submitBtn');
-// event
-  submitButton.onclick = submitFeedback;
-// functions
-function submitFeedback() {
+    // alert confirmation
     alert('Thank you for your valuable feedback');
+    //output data
     document.getElementById('userName').innerHTML = username;
     document.getElementById('userAge').innerHTML = age;
     document.getElementById('userEmail').innerHTML = email;
