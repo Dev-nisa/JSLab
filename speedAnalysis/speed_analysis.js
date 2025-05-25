@@ -22,11 +22,12 @@ function endTest() {
     // calculate time elapsed and worder per minute (WPM)
     var timeElapsed = (endTime - startTime) / 1000; //in seconds
     var userTypedText = document.getElementById("userInput").value;
+    var lengthOfText = userTypedText.length;
     // split the text using regex to count words correctly
     var typedWords = userTypedText.split(/\s+/).filter(function (word) {
         return word !== "";
     }).length;
-    
+
     var wpm = 0; // default value
     // logic
     if (timeElapsed !== 0 && !isNaN(typedWords)) {
@@ -37,7 +38,9 @@ function endTest() {
     outputDiv.innerHTML = "<h2>Typing Test Results:</h2>" +
         "<p>Words Typed: " + typedWords + "</p>" +
         "<p>Time Elapsed: " + timeElapsed.toFixed(2) + " seconds</p>" +
-        "<p>Words Per Minute (WPM): " + wpm + "</p>";
+        "<p>Words Per Minute (WPM): " + wpm + "</p>" +
+        "<p>Lenth of Text: " + lengthOfText + "</p>";
+
     // reset the button
     var button = document.getElementById("btn");
     button.innerHTML = "Start Test";
